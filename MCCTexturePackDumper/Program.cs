@@ -201,8 +201,11 @@ namespace MCCTexturePackDumper
 						}
 						else
 						{
-							PixelReadSettings r = new PixelReadSettings(fe.Width, fe.Height, StorageType.Char, PixelMapping.RGBA);
-							using (MagickImage f = new MagickImage(dats, r))
+							MagickReadSettings readSettings = new MagickReadSettings();
+							readSettings.Format = MagickFormat.Rgba;
+							readSettings.Width = fe.Width;
+							readSettings.Height = fe.Height;
+							using (MagickImage f = new MagickImage(dats, readSettings))
 								f.Write(outfile, MagickFormat.Png);
 						}
 
