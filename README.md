@@ -1,13 +1,18 @@
-# MCCTexturePackDumper
-A command-line tool for dumping texture pack files from Halo The Master Chief Collection
-
-*should* be future-proof but who knows.
+# MCC Texture Pack Dumper
+A tool for viewing/dumping texture pack files (.perm.bin) from Halo The Master Chief Collection (and as it turns out, various Square Enix games? though untested.)
 
 ## Use
-1. Copy the executable and DLL to the \data\ui\texturepacks folder inside your MCC installation.
+Load a texture pack to browse its textures, with the ability to extract single textures or the entire pack.
 
-2. Run the executable either by double-clicking or via command line.
-  * A double-click will prompt the input of a texture pack file in the folder, but without any extension, such as `emblemstexturepack`
-  * Command line works much the same, just passing the texture pack as an argument, such as `mcctexturepackdumper.exe emblemstexturepack`
+Texture packs can be found at `{MCC Install}\data\ui\texturepacks\`.
 
-3. If the texture pack name is valid the images will be dumped to a subfolder inside \texturepacks, with the same name as the pack, along with a \_fileindex.txt file giving the format, size, and original offset of the images in case you wish to replace anything.
+The box below the texture preview also provides research information like file offsets for manually modifying contents.
+
+## Xbox One
+Through this tool will open texture packs from Xbox builds of MCC, no code is in place to detile the textures, so they will appear scrambled.
+Unless a third party detile solution that doesn't piggyback official DLLs comes out, things will remain this way.
+If you want to make use of questionable means that you can (re)claim from other places, I find tile mode 3 or 4 can handle most textures.
+Xbox One also uses unsupported texture formats in places.
+
+## Misc
+Shoutout to [SD-UltimateTexTool](https://github.com/sneakyevil/SD-UltimateTexTool) for pointing out that Triad Wars shipped with an/the official tool for creating texture packs which was helpful for further research.
